@@ -5,8 +5,8 @@ var bodyParser = require("body-parser");
 var path = require("path");
 var app = express();
 //get the routes and data from other files
-require("./app/routing/api-routes.js")(app);
-require("./app/routing/html-routes.js")(app);
+const apiRoutes = require("./app/routing/api-routes.js")(app);
+const htmlRoutes = require("./app/routing/html-routes.js")(app);
 var friendsArray = require("./app/data/friends.js");
 
 // Sets up the Express App
@@ -19,7 +19,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
-app.use(express.static(__dirname + '/static'));
 //============================================================
 
 //start listening on 3000
