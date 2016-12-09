@@ -12,7 +12,7 @@ var friendsArray = require("./app/data/friends.js");
 // Sets up the Express App
 // =============================================================
 
-var PORT = process.env.port;
+var PORT = process.env.PORT || 3000;
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
